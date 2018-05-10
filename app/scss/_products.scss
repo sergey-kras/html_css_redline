@@ -2,13 +2,23 @@
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
+  .products__more{
+    @include size(4);
+    display: flex;
+    align-self: stretch;
+    flex-direction: column;
+    flex-wrap: wrap;
+    .products__product{
+      width: 100%;
+    }
+  }
   &__product{
     @include col();
     position: relative;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    margin-top: 30px;
+    margin-top: 1000px;
     .hover{
       transition: .3s;
       top: 5%;
@@ -49,15 +59,15 @@
       display: block;
       padding-top: 100%;
     }
-    &:nth-child(4n + 1){
+    &:nth-child(3n + 1){
       @include size(8);
       background-image: url("../img/item1.jpg");
     }
-    &:nth-child(4n + 2), &:nth-child(4n + 3){
+    &:nth-child(3n + 2), &:nth-child(4n + 3){
       @include size(4);
       background-image: url("../img/item2.png");
     }
-    &:nth-child(4n + 4){
+    &:nth-child(3n + 3){
       @include size(12);
       background-image: url("../img/item3.png");
       &:after{

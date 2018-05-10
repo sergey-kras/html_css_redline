@@ -40,6 +40,19 @@
       .main__toBottom{
         margin-top: 50px;
         display: inline-block;
+        img{
+          transition: .3s;
+          opacity: .7;
+          margin-bottom: 0px;
+        }
+        &:hover{
+          img{
+            transition: .3s;
+            opacity: 1;
+            box-shadow: 0px 0px 31px 1px rgba(174, 74, 41, 0.80);
+            background-color: rgba(174, 74, 41, 0.80);
+          }
+        }
       }
     }
   }
