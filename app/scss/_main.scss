@@ -1,0 +1,46 @@
+.main{
+  background: url("../img/sky.jpg") fixed no-repeat;
+  height: 100vh;
+  position: relative;
+  background-size: 110%;
+  .city{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: auto;
+    img{
+      width: 100%;
+    }
+ }
+  .container{
+    width: 50%;
+    padding: 0px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+    .main__name{
+      position: relative;
+      .logo{
+        width: 100%;
+      }
+      .main__text{
+        width: 100%;
+        margin-top: 30px;
+        h1{
+          width: 100%;
+          text-transform: uppercase;
+          color: #fff;
+          font-family: "Proxima Nova";
+          font-weight: 100;
+          font-size: 30px;
+        }
+      }
+      .main__toBottom{
+        margin-top: 50px;
+        display: inline-block;
+      }
+    }
+  }
+}
