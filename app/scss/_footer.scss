@@ -1,0 +1,61 @@
+.footer{
+  display: flex;
+  justify-content: space-between;
+  margin: 50px auto;
+  &__form, &__menu{
+    @include col();
+  }
+  &__form{
+    @include size(5);
+    form{
+      width: 100%;
+      display: flex;
+      align-self: flex-end;
+      input{
+        outline: none;
+        width: 100%;
+        border: none;
+        height: 34px;
+        border-bottom: 1px solid #c9c9c9;
+        font-family: Roboto;
+        font-size: 17px;
+        font-weight: 300;
+      }
+      input[type='submit'] {
+        width: 39px !important;
+        height: 38px !important;
+        background-image: url("../img/tobot.png");
+        transform: rotate(270deg);
+        border-bottom: none;
+        background-color: #000;
+        background-position: center;
+        border: none;
+        padding: 0px;
+        cursor: pointer;
+      }
+    }
+  }
+  &__menu{
+    @include size(4);
+    ul{
+      padding: 0px;
+      list-style-type: none;
+      display: flex;
+      justify-content: space-between;
+      li{
+        a{
+          font-family: Roboto;
+          font-size: 16px;
+          font-weight: 300;
+          color: #979797;
+          text-decoration: none;
+          transition: .3s;
+          &:hover{
+            color: #000;
+            transition: .3s;
+          }
+        }
+      }
+    }
+  }
+}
