@@ -1,13 +1,8 @@
-$('.burger').on('click',function(){
-    $(this).siblings('nav').toggle();
-});
-
 $('a[href^="#"]').click(function () {
     var target = $(this).attr('href');
     $('html, body').animate({scrollTop: $(target).offset().top }, 800);
     return false;
 });
-
 $('body').on('mousemove',function (e) {
     var block = $('.main');
     var width = block.width();
@@ -16,7 +11,7 @@ $('body').on('mousemove',function (e) {
     var yPosition = e.pageY;
     block.css({
         'background-position-x': width  / 2 * 0.1 -  width * 0.07  - xPosition * 0.07,
-        'background-position-y': height / 2 * 0.1 - height * 0.07 - yPosition * 0.03
+        'background-position-y': height / 2 * 0.1 - height * 0.07 - yPosition * 0.07
     })
 });
 function checkPosition() {
@@ -32,9 +27,65 @@ var $win = $(window);
 var $block = $('.products__product');
 $win.scroll(function() {
     for (var $i = 0; $i < $block.length ; $i++) {
-        if ($win.scrollTop() + $win.height() >= $($block[$i]).offset().top - 1300) {
-            console.log($i);
-            $($block[$i]).animate({'margin-top': 30 + 'px'}, 1200);
+        if ($win.scrollTop() + $win.height() >= $($block[$i]).offset().top + 60) {
+            $($block[$i]).animate({'margin-top': 30 + 'px', 'opacity': 1}, 500);
         }
     }
+});
+var blockMenu = $('.menu');
+var products = $('.products');
+$win.scroll(function() {
+    if ($win.scrollTop()  >= products.offset().top) {
+        blockMenu.css({position : 'fixed'})
+    }
+    else {
+        blockMenu.css({position : 'absolute'})
+    }
+});
+
+
+var burger = $('.menu__burger');
+var fade = $('.fade');
+var left = $('.products .container').offset().left - 15;
+var menu = $('.menu__nav');
+var menuFooter = $('.menu__footer');
+burger.css({'margin-left':left});
+
+burger.on('click',function(){
+    if(burger.hasClass('active')){
+        hideMenu()
+    }
+    else{
+        showMenu();
+    }
+});
+var deleyForBlockMenu;
+var deleyForAll = 400;
+if (left <= 300){
+    deleyForBlockMenu = 400;
+}
+else {
+    deleyForBlockMenu = 0;
+}
+function hideMenu() {
+    burger.animate({'margin-left':left},deleyForAll).removeClass('active');
+    menu.animate({'margin-left':-100,'opacity':0},deleyForAll, function () {
+        menu.css({display:'none'})
+    });
+    menuFooter.animate({'margin-left':-100,'opacity':0},deleyForAll, function () {
+        menuFooter.css({display:'none'})
+    });
+    blockMenu.animate({width:0,maxWidth:0,minWidth: 0},deleyForBlockMenu);
+    fade.fadeOut(deleyForAll);
+}
+function showMenu() {
+    burger.animate({'margin-left':20},deleyForAll).addClass('active');
+    menu.css({display:'flex'}).animate({'margin-left':0,'opacity':1},deleyForAll);
+    menuFooter.css({display:'flex'}).animate({'margin-left':0,'opacity':1},deleyForAll);
+    blockMenu.animate({width:left+60,maxWidth:left+60,minWidth: 300+'px'},deleyForBlockMenu);
+    fade.fadeIn(deleyForAll);
+}
+fade.on('click',function(){
+    console.log(1);
+    hideMenu();
 });

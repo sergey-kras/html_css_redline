@@ -1,0 +1,116 @@
+.menu{
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 30px;
+  height: 100%;
+  padding-right: 0;
+  z-index: 2;
+  background-color: #fff;
+  &__burger{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+    align-items: flex-end;
+    width: 30px;
+    height: 45px;
+    span{
+      transition: .4s;
+      width: 30px;
+      height: 2px;
+      background-color: black;
+      border-radius: 100px;
+      display: block;
+      margin-bottom: 8px;
+    }
+    &.active{
+      span{
+        transition: .4s;
+        &:first-child{
+          transform: rotate(-38deg);
+          width: 20px;
+          margin-right: 13px;
+          margin-bottom: 4px;
+        }
+        &:nth-child(2){
+          margin-bottom: 4px;
+        }
+        &:last-child{
+          transform: rotate(38deg);
+          width: 20px;
+          margin-right: 13px;
+        }
+      }
+    }
+  }
+  &__nav, &__footer{
+    display: none;
+    margin-left: -100px;
+    opacity: 0;
+  }
+  &__footer{
+    position: absolute;
+    bottom: 30px;
+    left: 0px;
+    width: 100%;
+    flex-direction: column;
+    .social{
+      padding-left: 30%;
+      a{
+        padding-left: 0 !important;
+      }
+    }
+    .social, .mail, .info{
+      margin-bottom: 30px;
+      p,a{
+        padding-left: 30%;
+        text-transform: uppercase;
+        text-decoration: none;
+        margin: 0px;
+        color: #b2b2b2;
+        font-size: 12px;
+        line-height: 22px;
+        letter-spacing: 2px;
+      }
+    }
+  }
+  nav{
+    width: 100%;
+    ul{
+      width: 100%;
+      padding-left: 0;
+      list-style-type: none;
+      li{
+        display: flex;
+        max-width: 100%;
+        border-top: 1px solid #efefef;
+        transition: .4s;
+        padding-left: 30%;
+        &:hover{
+          transition: .4s;
+          background-color: #f4f4f4;
+        }
+        a{
+          padding: 30px 0;
+          font-family: "Open Sans";
+          font-size: 15px;
+          color: #000;
+          text-transform: uppercase;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+.fade{
+  display: none;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  opacity: .6;
+}
