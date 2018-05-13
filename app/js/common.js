@@ -75,7 +75,9 @@ function hideMenu() {
     menuFooter.animate({'margin-left':-100,'opacity':0},deleyForAll, function () {
         menuFooter.css({display:'none'})
     });
-    blockMenu.animate({width:0,maxWidth:0,minWidth: 0},deleyForBlockMenu);
+    if (left <= 300){
+        blockMenu.animate({width:0,maxWidth:0,minWidth: 0},deleyForBlockMenu);
+    }
     fade.fadeOut(deleyForAll);
 }
 function showMenu() {
