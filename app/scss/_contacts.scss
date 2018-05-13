@@ -1,0 +1,23 @@
+.contacts{
+  margin-top: 110px;
+  .map{
+    position: relative;
+    width: 100%;
+    iframe{
+      width: 100%;
+    }
+    &__info{
+      background-color: #000;
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 20px;
+      p{
+        color: #fff;
+        font-size: 14px;
+        line-height: 30px;
+        margin: 0px;
+      }
+    }
+  }
+}
