@@ -13,5 +13,6 @@ a,div,span,h1,h2,h3,h4,h5,h6,p,li,ul{
 img{
   max-width: 100%;
 }
-$green: #a2c831;
-$yellow: #ffe93b;
+.content{
+  min-height: 90vh;
+}

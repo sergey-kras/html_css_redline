@@ -1,0 +1,35 @@
+.works{
+  height: auto !important;
+  @extend .products;
+  .container{
+    .container__works{
+      width: 100%;
+      .works__item{
+        @extend .products__product;
+        opacity: 1;
+        margin: 15px;
+        &:nth-child(n){
+          @include size(4);
+          background-image: url("../img/item2.png") !important;
+          &:after{
+            padding-top: 100%;
+          }
+        }
+      }
+    }
+    .button-group{
+      margin-top: 15px;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      button{
+        cursor: pointer;
+        margin-left: 30px;
+        padding: 30px 0;
+        background: none;
+        border: none;
+        outline: none;
+      }
+    }
+  }
+}
