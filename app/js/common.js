@@ -84,7 +84,7 @@ function showMenu() {
     burger.animate({'margin-left':20},deleyForAll).addClass('active');
     menu.css({display:'flex'}).animate({'margin-left':0,'opacity':1},deleyForAll);
     menuFooter.css({display:'flex'}).animate({'margin-left':0,'opacity':1},deleyForAll);
-    blockMenu.animate({width:left+60,maxWidth:left+60,minWidth: 300+'px'},deleyForBlockMenu);
+    blockMenu.animate({width:left+40,maxWidth:left+40,minWidth: 300+'px'},deleyForBlockMenu);
     fade.fadeIn(deleyForAll);
 }
 fade.on('click',function(){

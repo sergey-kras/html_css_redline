@@ -1,0 +1,61 @@
+.about{
+  margin-top: 110px;
+  .container{
+    display: flex;
+    flex-direction: column;
+    .about__item{
+      width: 100%;
+      display: flex;
+      margin-bottom: 50px;
+      font-size: 15px;
+      line-height: 35px;
+      .item__text:first-child{
+        @include size(8);
+      }
+      .item__text:nth-child(2){
+        @include size(6);
+      }
+      .item__text{
+        @include col();
+        p,h4{
+          margin: 0px;
+        }
+        h4{
+          font-weight: 400;
+          text-transform: uppercase;
+        }
+        p{
+          font-weight: 300;
+        }
+        ul{
+          padding-left: 15px;
+        }
+      }
+      .item__image{
+        @include col();
+        min-height: 300px;
+        background-repeat: no-repeat;
+      }
+    }
+    .about__item:first-child{
+      .item__text{
+        @include size(8);
+        p{
+          font-family: "Open Sans";
+          font-weight: 300;
+        }
+      }
+      .item__image{
+        @include size(4);
+      }
+    }
+    .about__item:nth-child(2){
+      .item__image{
+        @include size(6);
+      }
+      .item__text{
+        @include size(6);
+      }
+    }
+  }
+}
