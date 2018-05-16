@@ -32,6 +32,7 @@
     "jquery": "^3.3.1",
     "node-normalize-scss": "^3.0.0",
     "normalize.css": "^8.0.0",
+    "owl.carousel2": "^2.2.1",
     "smart-grid": "^2.0.1"
   },
   "dependencies": {}

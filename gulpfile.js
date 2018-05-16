@@ -55,6 +55,7 @@ gulp.task('libs', function() {
     return gulp.src([
         'app/js/jquery.min.js',
         'app/js/libs/*.js',
+        'node_modules/owl.carousel2/dist/owl.carousel.min.js',
         'app/js/common.js'
     ])
         .pipe(concat('scripts.min.js')) // Собираем их в кучу в новом файле libs.min.js

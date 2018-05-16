@@ -1,3 +1,23 @@
+
+$(window).on('load', function() {
+    $('.fs-slides').owlCarousel({
+        items: 1,
+        pullDrag: false,
+        loop: true,
+        dots: false,
+        animateOut: 'fadeOut',
+        responsiveRefreshRate: 0,
+    });
+});
+
+
+
+
+
+
+
+
+
 $('a[href^="#"]').click(function () {
     var target = $(this).attr('href');
     $('html, body').animate({scrollTop: $(target).offset().top }, 800);
@@ -129,4 +149,3 @@ $('.button-group').each( function( i, buttonGroup ) {
         $( this ).addClass('is-checked');
     });
 });
-
