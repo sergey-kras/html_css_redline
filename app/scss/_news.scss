@@ -1,0 +1,139 @@
+.news {
+  position: relative;
+  &__title {
+    margin-top: 30px;
+    margin-bottom: 100px;
+    text-align: center;
+    h2 {
+      font-size: 20px;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+  }
+  &__back {
+    position: absolute;
+    left: -30px;
+    transition: .4s;
+    cursor: pointer;
+    &:hover{
+      left: -35px;
+    }
+    span {
+      transition: .4s;
+      z-index: 1;
+      position: relative;
+      width: 30px;
+      height: 2px;
+      background-color: #000;
+      border-radius: 100px;
+      display: block;
+      margin-bottom: 8px;
+      &:first-child {
+        transform: rotate(-38deg);
+        width: 20px;
+        margin-right: 13px;
+        margin-bottom: 4px;
+      }
+      &:nth-child(2) {
+        margin-bottom: 4px;
+        margin-left: 2px;
+      }
+      &:last-child {
+        transform: rotate(38deg);
+        width: 20px;
+        margin-right: 13px;
+      }
+    }
+  }
+  &__content{
+    .new{
+      margin-bottom: 90px;
+      text-align: left;
+      &:nth-child(2n+2){
+        text-align: right;
+        .new__date{
+          text-align: left;
+        }
+        .image{
+          order: 1;
+        }
+        .text{
+          order: 2;
+        }
+        .more{
+          float: right;
+        }
+      }
+      &__date{
+        @include col();
+        text-align: right;
+        p{
+          color: #676767;
+          font-size: 15px;
+          font-weight: 300;
+        }
+      }
+      &__content{
+        display: flex;
+        flex-wrap: wrap;
+        .text{
+          @include col();
+          @include size(6);
+          h4{
+            margin-top: -10px;
+            font-weight: 300;
+            font-size: 20px;
+            text-transform: uppercase;
+            line-height: 42px;
+          }
+          p{
+            font-size: 15px;
+            font-style: italic;
+            line-height: 35px;
+            white-space: pre-line;
+            height: 150px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            transition: .4s;
+          }
+          .more{
+            transform: rotate(135deg);
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            transition: .4s;
+            &._small:hover{
+              margin-top: 5px;
+            }
+            &._big:hover{
+              margin-top: -5px;
+              height: 35px;
+            }
+            span{
+              display: inline-block;
+              background-color: #000;
+              width: 12px;
+              height: 2px;
+              &:first-child{
+                transform: rotate(90deg);
+                margin-bottom: -7px;
+              }
+              &:last-child{
+                margin-left: -10px;
+              }
+            }
+          }
+        }
+        .image{
+          @include col();
+          @include size(6);
+          text-align: center;
+        }
+      }
+    }
+  }
+}
